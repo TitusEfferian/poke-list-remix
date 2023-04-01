@@ -74,7 +74,7 @@ const PokeList = () => {
                   src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
                     y + 1
                   }.png`}
-                  alt="Norway"
+                  alt={x.name}
                 />
               </Center>
             </Card.Section>
