@@ -47,10 +47,21 @@ const PokeList = () => {
   }, [fetcher.data, fetcher.state]);
 
   return (
-    <SimpleGrid cols={3}>
+    <SimpleGrid
+      cols={4}
+      breakpoints={[
+        { maxWidth: "sm", cols: 2 },
+        { maxWidth: "md", cols: 3 },
+        { maxWidth: "lg", cols: 4 },
+      ]}
+    >
       {pokeData.results.map((x, y) => {
         if (y === pokeData.results.length - 1) {
-          return fetcher.state === 'loading' ? <Loader /> : <Box ref={ref}></Box>;
+          return fetcher.state === "loading" ? (
+            <Loader />
+          ) : (
+            <Box ref={ref}></Box>
+          );
         }
         return (
           <Card key={x.name}>

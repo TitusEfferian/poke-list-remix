@@ -1,4 +1,4 @@
-import { Alert, Container, Stack, Title } from "@mantine/core";
+import { Alert, Anchor, Container, Stack, Text, Title } from "@mantine/core";
 import type { LoaderArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import PokeList from "./PokeList";
@@ -20,8 +20,14 @@ export default function Index() {
       <Stack>
         <Title>Pokemon List</Title>
         <Alert color="yellow">
+         <Stack>
+          <Text>
           This is a simple Pokémon list fetch using the PokeAPI with the Remix
           framework.
+          </Text>
+          <Anchor href="https://github.com/TitusEfferian/poke-list-remix">https://github.com/TitusEfferian/poke-list-remix</Anchor>
+
+         </Stack>
         </Alert>
         <PokeList />
       </Stack>
