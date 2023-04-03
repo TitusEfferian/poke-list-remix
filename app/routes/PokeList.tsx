@@ -1,7 +1,6 @@
 import { Box, Card, Center, Image, Loader, SimpleGrid, Text } from "@mantine/core";
 import { useIntersection } from "@mantine/hooks";
-import { useFetcher } from "@remix-run/react";
-import { useLoaderData } from "react-router";
+import { useFetcher, useLoaderData } from "@remix-run/react";
 import { useEffect, useState } from "react";
 import { redirect } from "@remix-run/node";
 
