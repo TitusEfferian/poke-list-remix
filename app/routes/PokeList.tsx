@@ -1,6 +1,6 @@
 import { Box, Card, Center, Image, Loader, SimpleGrid, Text } from "@mantine/core";
 import { useIntersection } from "@mantine/hooks";
-import { useFetcher, useLoaderData } from "@remix-run/react";
+import { Link, useFetcher, useLoaderData } from "@remix-run/react";
 import { useEffect, useState } from "react";
 import { redirect } from "@remix-run/node";
 
@@ -71,21 +71,23 @@ const PokeList = () => {
 					);
 				}
 				return (
-					<Card key={x.name}>
-						<Card.Section>
-							<Center>
-								<Image
-									withPlaceholder
-									width={120}
-									height={120}
-									src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${y + 1
-										}.png`}
-									alt={x.name}
-								/>
-							</Center>
-						</Card.Section>
-						<Text>{x.name}</Text>
-					</Card>
+					<Link key={x.name} to={x.name}>
+						<Card>
+							<Card.Section>
+								<Center>
+									<Image
+										withPlaceholder
+										width={120}
+										height={120}
+										src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${y + 1
+											}.png`}
+										alt={x.name}
+									/>
+								</Center>
+							</Card.Section>
+							<Text>{x.name}</Text>
+						</Card>
+					</Link>
 				);
 			})}
 		</SimpleGrid>
